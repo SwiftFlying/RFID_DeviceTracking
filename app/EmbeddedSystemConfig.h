@@ -1,0 +1,10 @@
+#ifndef __EMBEDDEDSYSTEMCONFIG_H
+#define __EMBEDDEDSYSTEMCONFIG_H
+
+//#define STM32F429
+#define STM32L051
+
+
+#endif
+
+
