@@ -50,6 +50,7 @@
 ".\obj\stm32l0xx_hal_flash_ex.o"
 ".\obj\stm32l0xx_hal_flash_ramfunc.o"
 ".\obj\startup_stm32l051xx.o"
+".\obj\stm32l0xx_hal_msp.o"
 ".\obj\aes.o"
 ".\obj\loramac.o"
 ".\obj\sx1276.o"

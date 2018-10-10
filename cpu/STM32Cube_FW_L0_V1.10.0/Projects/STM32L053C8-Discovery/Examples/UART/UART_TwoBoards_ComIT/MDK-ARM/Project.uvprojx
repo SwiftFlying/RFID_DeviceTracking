@@ -383,9 +383,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Drivers/STM32L0xx_HAL_Driver</GroupName>
           <Files>
             <File>
@@ -514,6 +511,9 @@
               <FilePath>../Src/system_stm32l0xx.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>
