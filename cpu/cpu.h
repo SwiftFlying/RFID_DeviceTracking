@@ -31,13 +31,14 @@ void SysTick_Delay_ms(uint32_t delay);
     #warning Not supported compiler type
 #endif
 
-/*********************************************************************************************
-GPIO
-**********************************************************************************************/
+void RCC_Init(void);
+void SysTick_Init(void);
+void Tim_Init(void);
 void GPIO_Init(void);
-/*********************************************************************************************
-UART
-**********************************************************************************************/
+void EXTI_Init(void);
+void UART_Init(void);
+void SPI_Init(void);
+//UART
 #define UART_RxBuf_Size 1000
 extern uint8_t UART_RxBuf[UART_RxBuf_Size];
 extern uint16_t UART_RxBuf_Top;
@@ -64,7 +65,7 @@ extern uint8_t I2C_RxBuf[I2C_RxBuf_Size];
 void I2C_Send(uint8_t DevAddr, uint8_t WriteAddr, uint8_t *data, uint8_t size);
 void I2C_Read(uint8_t DevAddr, uint8_t ReadAddr, uint8_t *data, uint8_t size);
 void I2C_WaitEepromStandbyState(uint8_t DevAddr);
-void I2C_decimal_and_Integer(uint8_t cal_flag,long double *double_buffer,int *int_bufffer,u32 DOUBLE_ADDR,u32 LONGINT_ADDR);
+void I2C_decimal_and_Integer(uint8_t cal_flag,long double *double_buffer,int *int_bufffer,uint32_t DOUBLE_ADDR,uint32_t LONGINT_ADDR);
 
 
 /*********************************************************************************************
@@ -82,7 +83,7 @@ extern uint32_t  SPITimeout;
 #define SPI5_RxBuf_Size 1000
 extern uint8_t SPI5_TxBuf[SPI5_TxBuf_Size];
 extern uint8_t SPI5_RxBuf[SPI5_RxBuf_Size];
-u16 SPI_FLASH_SendHalfWord(u16 HalfWord);//发送半字
+uint16_t SPI_FLASH_SendHalfWord(uint16_t HalfWord);//发送半字
 uint16_t SPI_TIMEOUT_UserCallback(uint8_t errorCode);
 /*信息输出*/
 #define FLASH_DEBUG_ON         1

@@ -526,8 +526,8 @@ static uint8_t AddMacCommand( uint8_t cmd, uint8_t p1, uint8_t p2 )
 
 static TimerEvent_t TxNextPacketTimer; //Defines the application data transmission duty cycle
 volatile static bool TxDone = false;
-u32 MoteIDAddr;
-static u32 Rxpacket_count = 0 ;
+uint32_t MoteIDAddr;
+static uint32_t Rxpacket_count = 0 ;
 
 
 void LoRaMacInit(void)
@@ -645,7 +645,7 @@ void LoRaMacJoinReq(void)
 
 uint8_t LoRaMacSendFrameOnChannel( ChannelParams_t channel )
 {
-        u8 debug_buf[32];
+        uint8_t debug_buf[32];
         if( ChannelsDatarate == DR_6 )// High speed LoRa channel
         {       
 						SX1276_TxConfig( MODEM_LORA, channel.Frequency, TxPowers[ChannelsTxPower], 0, 1, Datarates[ChannelsDatarate], 1, 8, false, true, 0, 0, false, 3e6 ,&TxTimeOnAir,LoRa_TxBuf_PktLen );

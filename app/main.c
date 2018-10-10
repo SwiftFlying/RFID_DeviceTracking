@@ -10,7 +10,8 @@ int main( void )
 	LoRaMacInit();
   UART_Start();
   RFID_Init();
-	//PWR_LPMode(0);
+	//PWR_LPMode(1);	
+
   while(1)
   {
 	  RFID_Task();

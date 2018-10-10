@@ -937,7 +937,7 @@ void SX1276_Send(uint8_t *buffer, uint8_t size)
 
 
 //Low Power Set
-void LoRaMac_setlowPowerMode(u8 enable)
+void LoRaMac_setlowPowerMode(uint8_t enable)
 {
 	if(enable == 1)
 	{

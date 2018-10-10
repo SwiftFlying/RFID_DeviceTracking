@@ -74,14 +74,14 @@ extern "C"
 #define NULL 0
 #endif
   
-#define BUILD_u32(Byte0, Byte1, Byte2, Byte3) \
-          ((u32)((u32)((Byte0) & 0x00FF) \
-          + ((u32)((Byte1) & 0x00FF) << 8) \
-          + ((u32)((Byte2) & 0x00FF) << 16) \
-          + ((u32)((Byte3) & 0x00FF) << 24)))
+#define BUILD_uint32_t(Byte0, Byte1, Byte2, Byte3) \
+          ((uint32_t)((uint32_t)((Byte0) & 0x00FF) \
+          + ((uint32_t)((Byte1) & 0x00FF) << 8) \
+          + ((uint32_t)((Byte2) & 0x00FF) << 16) \
+          + ((uint32_t)((Byte3) & 0x00FF) << 24)))
 
-#define BUILD_u16(loByte, hiByte) \
-          ((u16)(((loByte) & 0x00FF) + (((hiByte) & 0x00FF) << 8)))
+#define BUILD_uint16_t(loByte, hiByte) \
+          ((uint16_t)(((loByte) & 0x00FF) + (((hiByte) & 0x00FF) << 8)))
 
 #define OSAL_MSG_NEXT(msg_ptr)      ((osal_msg_hdr_t *) (msg_ptr) - 1)->next
 
@@ -103,62 +103,62 @@ extern "C"
 */
 
 /////////////////////////
-typedef u32           halDataAlign_t;
+typedef uint32_t           halDataAlign_t;
 ///////////////////////////
 typedef struct
 {
   void   *next;
-  u16 len;
-  u8  dest_id;
+  uint16_t len;
+  uint8_t  dest_id;
 } osal_msg_hdr_t;
 
 typedef struct
 {
-  u8  event;
-  u8  status;
+  uint8_t  event;
+  uint8_t  status;
 } osal_event_hdr_t;
 
 typedef void * osal_msg_q_t;
 extern osal_msg_q_t osal_qHead;
 
 
-typedef u32 halIntState_t;
+typedef uint32_t halIntState_t;
 //////////
-typedef u16 (*pTaskEventHandlerFn)( u8 task_id, u16 event );
+typedef uint16_t (*pTaskEventHandlerFn)( uint8_t task_id, uint16_t event );
 /*********************************************************************
 * GLOBAL VARIABLES
 */
 extern const pTaskEventHandlerFn tasksArr[];
-extern const u8 tasksCnt;
-extern u16 *tasksEvents;
+extern const uint8_t tasksCnt;
+extern uint16_t *tasksEvents;
 /*********************************************************************
 * FUNCTIONS
 */
 extern void osal_msg_enqueue( osal_msg_q_t *q_ptr, void *msg_ptr );
-extern u8 osal_set_event( u8 task_id, u16 event_flag );
+extern uint8_t osal_set_event( uint8_t task_id, uint16_t event_flag );
 extern int osal_strlen( char *pString );
 extern void *osal_memcpy( void *dst, const void GENERIC *src, unsigned int len );
 extern void *osal_revmemcpy( void *dst, const void GENERIC *src, unsigned int len );
 extern void *osal_memdup( const void GENERIC *src, unsigned int len );
-extern u8 osal_memcmp( const void GENERIC *src1, const void GENERIC *src2, unsigned int len );
-extern void *osal_memset( void *dest, u8 value, int len );
-extern u16 osal_build_u16( u8 *swapped );
-extern u32 osal_build_u32( u8 *swapped, u8 len );
-extern u16 osal_rand( void );
-extern u8 * osal_msg_allocate( u16 len );
-extern u8 osal_msg_deallocate( u8 *msg_ptr );
-extern u8 osal_msg_send( u8 destination_task, u8 *msg_ptr );
-extern u8 *osal_msg_receive( u8 task_id );
-extern osal_event_hdr_t *osal_msg_find(u8 task_id, u8 event);
+extern uint8_t osal_memcmp( const void GENERIC *src1, const void GENERIC *src2, unsigned int len );
+extern void *osal_memset( void *dest, uint8_t value, int len );
+extern uint16_t osal_build_uint16_t( uint8_t *swapped );
+extern uint32_t osal_build_uint32_t( uint8_t *swapped, uint8_t len );
+extern uint16_t osal_rand( void );
+extern uint8_t * osal_msg_allocate( uint16_t len );
+extern uint8_t osal_msg_deallocate( uint8_t *msg_ptr );
+extern uint8_t osal_msg_send( uint8_t destination_task, uint8_t *msg_ptr );
+extern uint8_t *osal_msg_receive( uint8_t task_id );
+extern osal_event_hdr_t *osal_msg_find(uint8_t task_id, uint8_t event);
 extern void osal_msg_enqueue( osal_msg_q_t *q_ptr, void *msg_ptr );
 extern void *osal_msg_dequeue( osal_msg_q_t *q_ptr );
 extern void osal_msg_push( osal_msg_q_t *q_ptr, void *msg_ptr );
 extern void osal_msg_extract( osal_msg_q_t *q_ptr, void *msg_ptr, void *prev_ptr );
-extern u8 osal_msg_enqueue_max( osal_msg_q_t *q_ptr, void *msg_ptr, u8 max );
-extern u8 osal_clear_event( u8 task_id, u16 event_flag );
-extern u8 osal_int_enable( u8 interrupt_id );
-extern u8 osal_int_disable( u8 interrupt_id );
-extern u8 osal_init_system( void );
+extern uint8_t osal_msg_enqueue_max( osal_msg_q_t *q_ptr, void *msg_ptr, uint8_t max );
+extern uint8_t osal_clear_event( uint8_t task_id, uint16_t event_flag );
+extern uint8_t osal_int_enable( uint8_t interrupt_id );
+extern uint8_t osal_int_disable( uint8_t interrupt_id );
+extern uint8_t osal_init_system( void );
 extern void osal_start_system( void );
 extern void osalTimeUpdate( void );
 
@@ -179,36 +179,36 @@ extern void osalInitTasks( void );
   */
 void osal_mem_init( void );
 void osal_mem_kick( void );
-extern void *osal_mem_alloc( u16 size );
+extern void *osal_mem_alloc( uint16_t size );
 void osal_mem_free( void *ptr );
-u16 osal_heap_block_max( void );
-u16 osal_heap_block_cnt( void );
-u16 osal_heap_block_free( void );
-u16 osal_heap_mem_used( void );
-u16 osal_heap_mem_max( void );
+uint16_t osal_heap_block_max( void );
+uint16_t osal_heap_block_cnt( void );
+uint16_t osal_heap_block_free( void );
+uint16_t osal_heap_mem_used( void );
+uint16_t osal_heap_mem_max( void );
 
 
 typedef struct mutex_struct
 {
- u32 mutex_value;
+ uint32_t mutex_value;
  struct mutex_struct *next_mutex;
 }osal_mutex_t;
 
 osal_mutex_t* osal_mutex_create(void);
 void osal_mutex_delete(osal_mutex_t** mutex);
-void osal_mutex_take(osal_mutex_t** mutex,u32 mutex_overtime);
-u32 osal_mutex_check(osal_mutex_t* mutex);
+void osal_mutex_take(osal_mutex_t** mutex,uint32_t mutex_overtime);
+uint32_t osal_mutex_check(osal_mutex_t* mutex);
 void osal_mutex_release(osal_mutex_t** mutex);
 void osal_mutex_updata(void);
 
 
-extern void osalTimerUpdate( u16 updateTime );  
+extern void osalTimerUpdate( uint16_t updateTime );  
 extern void osalTimerInit( void );
-extern u8 osal_start_timerEx( u8 taskID, u16 event_id, u16 timeout_value );
-extern u8 osal_stop_timerEx( u8 task_id, u16 event_id );
-extern u16 osal_get_timeoutEx( u8 task_id, u16 event_id );
-extern u8 osal_timer_num_active( void );
-extern u32 osal_GetSystemClock( void );
+extern uint8_t osal_start_timerEx( uint8_t taskID, uint16_t event_id, uint16_t timeout_value );
+extern uint8_t osal_stop_timerEx( uint8_t task_id, uint16_t event_id );
+extern uint16_t osal_get_timeoutEx( uint8_t task_id, uint16_t event_id );
+extern uint8_t osal_timer_num_active( void );
+extern uint32_t osal_GetSystemClock( void );
 
 
 /*********************************************************************
