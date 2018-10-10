@@ -1,5 +1,11 @@
 #include "sx1276.h"
 #include "LoRaMac.h"
+#include "aes.h"
+#include "os.h"
+#include "cpu.h"
+
+
+
 
 //结点参数
 uint32_t LoRaMacDevAddr = 0x28AD9150 ;
@@ -219,6 +225,22 @@ static void OnRxWindow1TimerEvent( void ); //Function executed on first Rx windo
 static TimerEvent_t RxWindowTimer2;
 static uint32_t RxWindow2Delay;
 static void OnRxWindow2TimerEvent( void ); //Function executed on second Rx window timer event
+
+
+typedef union
+{
+    uint8_t Value;
+    struct
+    {
+        uint8_t Tx              : 1;
+        uint8_t Rx              : 1;
+        uint8_t RxData          : 1;
+        uint8_t Multicast       : 1;
+        uint8_t RxSlot          : 2;
+        uint8_t LinkCheck       : 1;
+        uint8_t JoinAccept      : 1;
+    }PACKED Bits;
+}PACKED LoRaMacEventFlags_t;
 
 
 

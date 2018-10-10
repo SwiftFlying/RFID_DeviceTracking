@@ -4,12 +4,13 @@
 .\obj\sx1276.o: ..\com\lora\sx1276Regs-LoRa.h
 .\obj\sx1276.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\sx1276.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\sx1276.o: ..\os\os.h
+.\obj\sx1276.o: ..\com\lora\LoRaMac.h
 .\obj\sx1276.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\sx1276.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\sx1276.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\sx1276.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\obj\sx1276.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+.\obj\sx1276.o: ..\os\os.h
 .\obj\sx1276.o: ..\cpu\cpu.h
 .\obj\sx1276.o: ..\cpu\cmsis\stm32l051xx.h
 .\obj\sx1276.o: ..\cpu\cmsis\core_cm0plus.h
@@ -49,3 +50,4 @@
 .\obj\sx1276.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_usart.h
 .\obj\sx1276.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_usart_ex.h
 .\obj\sx1276.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_wwdg.h
+.\obj\sx1276.o: ..\algorithm\algorithm.h

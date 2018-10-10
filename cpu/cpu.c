@@ -14,7 +14,7 @@ __IO uint32_t uwPeriodValue = 0;
 
 void CPU_Init(void)
 {
-	GPIO_InitTypeDef   GPIO_InitStructure;
+
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_OscInitTypeDef RCC_OscInitStruct;	
 
@@ -28,7 +28,8 @@ void CPU_Init(void)
 	__HAL_FLASH_PREFETCH_BUFFER_ENABLE();// Configure Flash preread  
 #endif // PREFETCH_ENABLE 
 	HAL_InitTick(TICK_INT_PRIORITY);	// Use systick as time base source and configure 1ms tick (default clock after Reset is MSI) 
-	
+
+  GPIO_Init();	
 /***************************************************************************************************************
 RCC
 **************************************************************************************************************/
@@ -78,39 +79,12 @@ tim£¬100us ¶¨Ê±: 32MHz/3200=10000Hz
 	HAL_TIM_Base_Start_IT(&TimHandle);
 
 
-/***************************************************************************************************************
-GPIO
-**************************************************************************************************************/
-		__GPIOB_CLK_ENABLE();
-		GPIO_InitStructure.Pin = (GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_10);//DIO0-PB10, DIO1-PB2, DIO2-PB1, DIO3-PB0, 
-		GPIO_InitStructure.Mode = GPIO_MODE_INPUT;
-		GPIO_InitStructure.Pull = GPIO_PULLUP;
-		GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
-
-		GPIO_InitStructure.Pin = GPIO_PIN_11;    //NRESET-PB11
-		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIO_InitStructure.Pull = GPIO_NOPULL;
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
-
-		__GPIOA_CLK_ENABLE();
-		GPIO_InitStructure.Pin = (GPIO_PIN_2);//sx1279 board use active crystal, and PA2 control it's power supply
-		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIO_InitStructure.Pull = GPIO_PULLUP;
-		GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
-
 
 /***************************************************************************************************************
 EXTI
 **************************************************************************************************************/
     //SX1276SetOpMode( RF_OPMODE_SLEEP );   //20160317
-		__GPIOB_CLK_ENABLE();/* Enable GPIOB clock */
-		GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING;
-		GPIO_InitStructure.Pull = GPIO_NOPULL;
-		GPIO_InitStructure.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_10;//DIO0 -- PB10, DIO1 -- PB2, DIO2 -- PB1, DIO3 -- PB0,
-		GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
 		//HAL_NVIC_SetPriority(EXTI4_15_IRQn, 3, 0);/* Enable and set EXTI4_15 Interrupt to the lowest priority */
 		//HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
 		HAL_NVIC_SetPriority(EXTI0_1_IRQn, 1, 0);
@@ -137,20 +111,8 @@ uart
     assert_param(IS_UART_INSTANCE(&UartHandle->Instance));
   if(UartHandle.State == HAL_UART_STATE_RESET)    /* Init the low level hardware : GPIO, CLOCK, CORTEX */
   {
-		GPIO_InitTypeDef  GPIO_InitStruct;	
-		__GPIOB_CLK_ENABLE();/* Enable GPIO TX/RX clock */
 		__USART1_CLK_ENABLE(); /* Enable USART1 clock */
 
-		GPIO_InitStruct.Pin       = GPIO_PIN_6;/* UART TX GPIO pin configuration  */
-		GPIO_InitStruct.Mode      = GPIO_MODE_AF_PP;
-		GPIO_InitStruct.Pull      = GPIO_PULLUP;    //GPIO_NOPULL;
-		GPIO_InitStruct.Speed     = GPIO_SPEED_FAST;
-		GPIO_InitStruct.Alternate = GPIO_AF0_USART1;
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-		GPIO_InitStruct.Pin = GPIO_PIN_7;   /* UART RX GPIO pin configuration  */
-		GPIO_InitStruct.Alternate = GPIO_AF0_USART1;
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 		HAL_NVIC_SetPriority(USART1_IRQn, 0, 1);//Configure the NVIC for UART1
 		HAL_NVIC_EnableIRQ(USART1_IRQn);
@@ -200,25 +162,7 @@ SPI
     SpiHandle.Init.TIMode             = SPI_TIMODE_DISABLED;
 
 
-		GPIO_InitStructure.Pin = GPIO_PIN_5;     /* Configure SPI SCK */
-		GPIO_InitStructure.Mode = GPIO_MODE_AF_PP;
-		GPIO_InitStructure.Pull  = GPIO_PULLDOWN;  //GPIO_PULLUP;
-		GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;
-		GPIO_InitStructure.Alternate = GPIO_AF0_SPI1;
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
-		GPIO_InitStructure.Pin = GPIO_PIN_7;/* Configure SPI MOSI */
-		GPIO_InitStructure.Alternate = GPIO_AF0_SPI1;
-		GPIO_InitStructure.Pull  = GPIO_PULLDOWN;
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
-		GPIO_InitStructure.Pin = GPIO_PIN_6;/* Configure SPI MISO */
-		GPIO_InitStructure.Alternate = GPIO_AF0_SPI1;
-		GPIO_InitStructure.Pull  = GPIO_PULLDOWN;
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
-		GPIO_InitStructure.Pin = GPIO_PIN_4; /* Configure SPI NSS pin: */
-		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIO_InitStructure.Pull = GPIO_PULLUP;
-		GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
 		__SPI1_CLK_ENABLE();	
 		HAL_SPI_Init(&SpiHandle);
   }
@@ -339,6 +283,63 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim)
 /***************************************************************************************************************
 GPIO
 **************************************************************************************************************/
+void GPIO_Init(void)
+{
+	  GPIO_InitTypeDef   GPIO_InitStructure;	
+	  __GPIOA_CLK_ENABLE();
+		__GPIOB_CLK_ENABLE();
+//OUT
+		GPIO_InitStructure.Pin = GPIO_PIN_11;    //NRESET-PB11
+		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+		GPIO_InitStructure.Pull = GPIO_NOPULL;
+		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+		
+		GPIO_InitStructure.Pin = (GPIO_PIN_2);//sx1279 board use active crystal, and PA2 control it's power supply
+		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+		GPIO_InitStructure.Pull = GPIO_PULLUP;
+		GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
+		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);		
+//EXTI	
+		GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING;
+		GPIO_InitStructure.Pull = GPIO_NOPULL;
+		GPIO_InitStructure.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_10;//DIO0 -- PB10, DIO1 -- PB2, DIO2 -- PB1, DIO3 -- PB0,
+		GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
+		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);	
+//UART			
+		GPIO_InitStructure.Pin       = GPIO_PIN_6;/* UART TX GPIO pin configuration  */
+		GPIO_InitStructure.Mode      = GPIO_MODE_AF_PP;
+		GPIO_InitStructure.Pull      = GPIO_PULLUP;    //GPIO_NOPULL;
+		GPIO_InitStructure.Speed     = GPIO_SPEED_FAST;
+		GPIO_InitStructure.Alternate = GPIO_AF0_USART1;
+		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+		GPIO_InitStructure.Pin = GPIO_PIN_7;   /* UART RX GPIO pin configuration  */
+		GPIO_InitStructure.Alternate = GPIO_AF0_USART1;
+		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);	
+//SPI	
+		GPIO_InitStructure.Pin = GPIO_PIN_5;     /* Configure SPI SCK */
+		GPIO_InitStructure.Mode = GPIO_MODE_AF_PP;
+		GPIO_InitStructure.Pull  = GPIO_PULLDOWN;  //GPIO_PULLUP;
+		GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;
+		GPIO_InitStructure.Alternate = GPIO_AF0_SPI1;
+		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+		GPIO_InitStructure.Pin = GPIO_PIN_7;/* Configure SPI MOSI */
+		GPIO_InitStructure.Alternate = GPIO_AF0_SPI1;
+		GPIO_InitStructure.Pull  = GPIO_PULLDOWN;
+		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+		GPIO_InitStructure.Pin = GPIO_PIN_6;/* Configure SPI MISO */
+		GPIO_InitStructure.Alternate = GPIO_AF0_SPI1;
+		GPIO_InitStructure.Pull  = GPIO_PULLDOWN;
+		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+		GPIO_InitStructure.Pin = GPIO_PIN_4; /* Configure SPI NSS pin: */
+		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+		GPIO_InitStructure.Pull = GPIO_PULLUP;
+		GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;
+		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);	
+	
+}
+	
+
 void GPIO_Write(void)
 {
 }

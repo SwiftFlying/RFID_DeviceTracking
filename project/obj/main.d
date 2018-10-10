@@ -48,4 +48,4 @@
 .\obj\main.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_usart_ex.h
 .\obj\main.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_wwdg.h
 .\obj\main.o: ..\com\lora\LoraMac.h
-.\obj\main.o: ..\app\algorithm.h
+.\obj\main.o: ..\algorithm\algorithm.h

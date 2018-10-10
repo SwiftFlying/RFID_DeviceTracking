@@ -10,7 +10,6 @@ int main( void )
 	LoRaMacInit();
   UART_Start();
   RFID_Init();
-	//HAL_PWR_EnterSLEEPMode(PWR_LOWPOWERREGULATOR_ON,PWR_SLEEPENTRY_WFE);
 	//PWR_LPMode(0);
   while(1)
   {

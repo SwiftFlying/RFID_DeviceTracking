@@ -48,4 +48,3 @@
 .\obj\rfid.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_usart_ex.h
 .\obj\rfid.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_wwdg.h
 .\obj\rfid.o: ..\com\lora\LoraMac.h
-.\obj\rfid.o: ..\app\algorithm.h

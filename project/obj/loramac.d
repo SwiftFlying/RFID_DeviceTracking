@@ -10,7 +10,8 @@
 .\obj\loramac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\loramac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\obj\loramac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
-.\obj\loramac.o: ..\app\algorithm.h
+.\obj\loramac.o: ..\com\lora\aes.h
+.\obj\loramac.o: ..\algorithm\algorithm.h
 .\obj\loramac.o: ..\os\os.h
 .\obj\loramac.o: ..\cpu\cpu.h
 .\obj\loramac.o: ..\cpu\cmsis\stm32l051xx.h
