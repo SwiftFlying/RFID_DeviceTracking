@@ -398,7 +398,6 @@ void SPI_Init(void)
     SpiHandle.Init.CRCCalculation     = SPI_CRCCALCULATION_DISABLED;
     SpiHandle.Init.CRCPolynomial      = 7;
     SpiHandle.Init.TIMode             = SPI_TIMODE_DISABLED;
-		__SPI1_CLK_ENABLE();	
 		HAL_SPI_Init(&SpiHandle);
   }	
 }
@@ -503,15 +502,8 @@ void PWR_LPMode(uint8_t mode)
 
         //Radio.Sleep( );			
 
-				SpiHandle.State = HAL_SPI_STATE_BUSY;
-				__HAL_SPI_DISABLE(&SpiHandle); /* Disable the SPI Peripheral Clock */
-				HAL_SPI_MspDeInit(&SpiHandle);  /* DeInit the low level hardware: GPIO, CLOCK, NVIC... */
-				SpiHandle.ErrorCode = HAL_SPI_ERROR_NONE;
-				SpiHandle.State = HAL_SPI_STATE_RESET;
-				__HAL_UNLOCK(&SpiHandle);		  /* Release Lock */
-		
-				__SPI1_CLK_DISABLE();
-		
+		    HAL_SPI_DeInit(&SpiHandle);
+        HAL_UART_DeInit(&UartHandle);		
 		
 				GPIO_InitStruct.Pin = GPIO_PIN_5;   //SPIx_SCK_PIN;
 				GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;

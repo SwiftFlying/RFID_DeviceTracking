@@ -54,3 +54,20 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 		HAL_NVIC_SetPriority(USART1_IRQn, 0, 1);//Configure the NVIC for UART1
 		HAL_NVIC_EnableIRQ(USART1_IRQn);	
 }
+
+void HAL_UART_MspDeInit(UART_HandleTypeDef *huart)
+{
+	HAL_NVIC_DisableIRQ(USART1_IRQn);	
+	__USART1_CLK_DISABLE(); /* Enable USART1 clock */
+}
+
+void HAL_SPI_MspInit(SPI_HandleTypeDef *hspi)
+{
+	__SPI1_CLK_ENABLE();
+}
+
+void HAL_SPI_MspDeInit(SPI_HandleTypeDef *hspi)
+{
+	__SPI1_CLK_DISABLE();
+}
+
