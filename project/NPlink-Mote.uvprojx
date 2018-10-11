@@ -630,6 +630,11 @@
               <FileType>2</FileType>
               <FilePath>..\cpu\CMSIS\startup_stm32l051xx.s</FilePath>
             </File>
+            <File>
+              <FileName>stm32l0xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_msp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

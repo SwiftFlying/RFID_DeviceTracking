@@ -151,7 +151,7 @@
           <Type>0</Type>
           <LineNumber>899</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134233044</Address>
+          <Address>134232902</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -167,7 +167,7 @@
           <Type>0</Type>
           <LineNumber>944</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134233210</Address>
+          <Address>134233196</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -183,7 +183,7 @@
           <Type>0</Type>
           <LineNumber>979</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134233504</Address>
+          <Address>134233352</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -197,9 +197,9 @@
         <Bp>
           <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>979</LineNumber>
+          <LineNumber>1001</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134234734</Address>
+          <Address>134233568</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -208,7 +208,23 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>D:\宸ヤ綔鍖?STM32L051-RFID_DeviceTracking-2018\software\com\lora\LoRaMac.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\979</Expression>
+          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\1001</Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>1001</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134234798</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\宸ヤ綔鍖?STM32L051-RFID_DeviceTracking-2018\software\com\lora\LoRaMac.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\1001</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -894,17 +910,29 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>52</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_msp.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_msp.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
   </Group>
 
   <Group>
     <GroupName>lora</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>52</FileNumber>
+      <FileNumber>53</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -916,7 +944,7 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>53</FileNumber>
+      <FileNumber>54</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -928,7 +956,7 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>54</FileNumber>
+      <FileNumber>55</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -948,7 +976,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>55</FileNumber>
+      <FileNumber>56</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -968,7 +996,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>56</FileNumber>
+      <FileNumber>57</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -980,7 +1008,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>57</FileNumber>
+      <FileNumber>58</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -992,7 +1020,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>58</FileNumber>
+      <FileNumber>59</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1004,7 +1032,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>59</FileNumber>
+      <FileNumber>60</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
