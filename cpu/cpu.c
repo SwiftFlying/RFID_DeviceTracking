@@ -98,22 +98,7 @@ TIM
 **************************************************************************************************************/
 uint32_t uwPrescalerValue = 0;
 
-void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim)
-{
-  /*##-1- Enable peripherals and GPIO Clocks #################################*/
-  /* TIMx Peripheral clock enable */
-  __TIM2_CLK_ENABLE();
 
-  /* The used GPIO (LED2 port) will be configured in the main program through
-  LED2 initialization method */
-
-  /*##-2- Configure the NVIC for TIMx ########################################*/
-  /* Set the TIMx priority */
-  HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
-
-  /* Enable the TIMx global Interrupt */
-  HAL_NVIC_EnableIRQ(TIM2_IRQn);
-}
 
 
 void Tim_Init(void) //100us 定时: 32MHz/3200=10000Hz
@@ -153,36 +138,8 @@ void GPIO_Init(void)
 		
 		GPIO_InitStructure.Pin = GPIO_PIN_5 ;//PB5,
 		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);			
-		
-//UART			
-		GPIO_InitStructure.Mode= GPIO_MODE_AF_PP;
-		GPIO_InitStructure.Pull= GPIO_PULLUP;    
-		GPIO_InitStructure.Speed= GPIO_SPEED_FAST;
-		GPIO_InitStructure.Alternate = GPIO_AF0_USART1;
-		GPIO_InitStructure.Pin= GPIO_PIN_6;//PB6-UART TX
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
-		GPIO_InitStructure.Pin = GPIO_PIN_7;//PB7-UART RX 
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);	
-//SPI	
-		GPIO_InitStructure.Alternate = GPIO_AF0_SPI1;
-		GPIO_InitStructure.Pull  = GPIO_PULLDOWN;  //GPIO_PULLUP;
-		GPIO_InitStructure.Mode = GPIO_MODE_AF_PP;	
-		GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;
-		GPIO_InitStructure.Pin = GPIO_PIN_5;//PA5-SPI SCK 
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
-		GPIO_InitStructure.Pin = GPIO_PIN_7;//PA7-SPI MOSI 
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
-		GPIO_InitStructure.Pin = GPIO_PIN_6;//PA6-SPI MISO 
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
-		GPIO_InitStructure.Pin = GPIO_PIN_4;//PA4-SPI NSS pin: 
-		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIO_InitStructure.Pull = GPIO_PULLUP;
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);		
 }
 
-/***************************************************************************************************************
-EXTI
-**************************************************************************************************************/
 void EXTI_Init(void)
 {
 	HAL_NVIC_SetPriority(EXTI0_1_IRQn, 1, 0);
@@ -384,9 +341,6 @@ void SPI_Init(void)
   if(HAL_SPI_GetState(&SpiHandle) == HAL_SPI_STATE_RESET)
   {
     SpiHandle.Instance = SPI1;
-    /* On STM32L0538-DISCO, EPD ID cannot be read then keep a common configuration */
-    /* for EPD (SPI_DIRECTION_2LINES) */
-    /* Note: To read a register a EPD, SPI_DIRECTION_1LINE should be set */
     SpiHandle.Init.Mode               = SPI_MODE_MASTER;
     SpiHandle.Init.Direction          = SPI_DIRECTION_2LINES;
     SpiHandle.Init.BaudRatePrescaler  = SPI_BAUDRATEPRESCALER_8;
@@ -504,27 +458,6 @@ void PWR_LPMode(uint8_t mode)
 
 		    HAL_SPI_DeInit(&SpiHandle);
         HAL_UART_DeInit(&UartHandle);		
-		
-				GPIO_InitStruct.Pin = GPIO_PIN_5;   //SPIx_SCK_PIN;
-				GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-				GPIO_InitStruct.Pull  = GPIO_NOPULL;  //GPIO_PULLUP;
-				GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-				GPIO_InitStruct.Alternate = GPIO_AF0_SPI1;
-				HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-				GPIO_InitStruct.Pin = GPIO_PIN_7; //Configure SPI MOSI
-				GPIO_InitStruct.Alternate = GPIO_AF0_SPI1;
-				GPIO_InitStruct.Pull  = GPIO_NOPULL;
-				HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-				GPIO_InitStruct.Pin = GPIO_PIN_6;//Configure SPI MISO
-				GPIO_InitStruct.Alternate = GPIO_AF0_SPI1;
-				GPIO_InitStruct.Pull  = GPIO_PULLDOWN;
-				HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-				GPIO_InitStruct.Pin = GPIO_PIN_4;				//Configure SPI NSS pin: 
-				GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-				GPIO_InitStruct.Pull = GPIO_NOPULL;
-				GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-				HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
       	HAL_TIM_Base_DeInit(&TimHandle);
 		
 				GPIO_InitStruct.Pin = (GPIO_PIN_0 |GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_10 );
@@ -533,18 +466,6 @@ void PWR_LPMode(uint8_t mode)
 				GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
 				HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 				
-				GPIO_InitStruct.Pin = GPIO_PIN_11;
-				GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
-				GPIO_InitStruct.Pull = GPIO_NOPULL;
-				GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
-				HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);//PB11控制sx芯片的reset引脚
-				//HAL_GPIO_WritePin(GPIOB,GPIO_PIN_11,GPIO_PIN_RESET);
-				GPIO_InitStruct.Pin = GPIO_PIN_2;
-				GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
-				GPIO_InitStruct.Pull = GPIO_NOPULL;
-				GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
-				HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); //PA2控制sx芯片的有源晶振
-				HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2,GPIO_PIN_RESET);			
 				__GPIOB_CLK_DISABLE();  
 				__GPIOA_CLK_DISABLE();   //20160317	
 
@@ -575,10 +496,7 @@ void PWR_LPMode(uint8_t mode)
 		case 8:
 			
 		break;
-		case 9: //恢复
-			
-			
-		break;
+
 		
 	}
 			

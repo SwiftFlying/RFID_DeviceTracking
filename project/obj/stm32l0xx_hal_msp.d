@@ -1,4 +1,4 @@
-.\obj\stm32l0xx_hal_msp.o: ..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_msp.c
+.\obj\stm32l0xx_hal_msp.o: ..\cpu\stm32l0xx_hal_msp.c
 .\obj\stm32l0xx_hal_msp.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal.h
 .\obj\stm32l0xx_hal_msp.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_conf.h
 .\obj\stm32l0xx_hal_msp.o: ..\cpu\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_rcc.h
