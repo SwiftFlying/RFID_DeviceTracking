@@ -1,1 +1,1 @@
-.\obj\startup_stm32l051xx.o: ..\cpu\CMSIS\startup_stm32l051xx.s
+.\obj\startup_stm32l051xx.o: ..\program\device\cpu\STM32L051\startup_stm32l051xx.s

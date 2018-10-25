@@ -116,6 +116,11 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+          <Name></Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>JL2CM3</Key>
           <Name>-U20090928 -O78 -S2 -ZTIFSpeedSel5000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(0BC11477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC1000 -FN1 -FF0STM32L0xx_64.FLM -FS08000000 -FL010000 -FP0($$Device:STM32L051C8$CMSIS\Flash\STM32L0xx_64.FLM)</Name>
         </SetRegEntry>
@@ -149,109 +154,65 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>899</LineNumber>
+          <LineNumber>507</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134232902</Address>
+          <Address>134229954</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\宸ヤ綔鍖?STM32L051-RFID_DeviceTracking-2018\software\com\lora\LoRaMac.c</Filename>
+          <Filename>D:\宸ヤ綔\RFID&amp;LORA\software\Manage\program\com\lora\LoRaMac.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\899</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>944</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134233196</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\宸ヤ綔鍖?STM32L051-RFID_DeviceTracking-2018\software\com\lora\LoRaMac.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\944</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>979</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134233352</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\宸ヤ綔鍖?STM32L051-RFID_DeviceTracking-2018\software\com\lora\LoRaMac.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\979</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>1001</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134233568</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\宸ヤ綔鍖?STM32L051-RFID_DeviceTracking-2018\software\com\lora\LoRaMac.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\1001</Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>1001</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134234798</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\宸ヤ綔鍖?STM32L051-RFID_DeviceTracking-2018\software\com\lora\LoRaMac.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\NPLink_Mote\../com/lora/LoRaMac.c\1001</Expression>
+          <Expression>\\NPLink_Mote\../program/com/lora/LoRaMac.c\507</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>FrameLen</ItemText>
+          <ItemText>modem_frame</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>LoRa_RxBuf</ItemText>
+          <ItemText>rf_tick</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>MType</ItemText>
+          <ItemText>UART_RxBuf</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>FrameLen</ItemText>
+          <ItemText>a</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>modem_frame</ItemText>
+          <ItemText>b</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>UART_RxBuf_Rear</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>UART_RxBuf_Top</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>tags</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>tags[i].EPC1</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -260,7 +221,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>0</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -293,20 +254,20 @@
   </Target>
 
   <Group>
-    <GroupName>cpu</GroupName>
-    <tvExp>1</tvExp>
+    <GroupName>STM32L051</GroupName>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
-      <FileType>1</FileType>
+      <FileType>2</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\cpu.c</PathWithFileName>
-      <FilenameWithoutPath>cpu.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\startup_stm32l051xx.s</PathWithFileName>
+      <FilenameWithoutPath>startup_stm32l051xx.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -317,8 +278,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\bsp_rtc.c</PathWithFileName>
+      <FilenameWithoutPath>bsp_rtc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -329,8 +290,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_adc.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_adc.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -341,8 +302,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_adc_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_adc_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_adc.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_adc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -353,8 +314,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_comp.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_comp.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_adc_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_adc_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -365,8 +326,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_cortex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_cortex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_comp.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_comp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -377,8 +338,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_crc.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_crc.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_cortex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_cortex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -389,8 +350,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_crc_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_crc_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_crc.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_crc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -401,8 +362,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_cryp.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_cryp.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_crc_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_crc_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -413,8 +374,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_cryp_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_cryp_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_cryp.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_cryp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -425,8 +386,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_dac.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_dac.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_cryp_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_cryp_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -437,8 +398,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_dac_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_dac_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_dac.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_dac.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -449,8 +410,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_dma.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_dma.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_dac_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_dac_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -461,8 +422,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_gpio.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_gpio.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_dma.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_dma.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -473,8 +434,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_i2c.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_i2c.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_gpio.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_gpio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -485,8 +446,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_i2c_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_i2c_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_i2c.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_i2c.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -497,8 +458,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_i2s.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_i2s.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_i2c_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_i2c_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -509,8 +470,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_irda.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_irda.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_i2s.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_i2s.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -521,7 +482,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_iwdg.c</PathWithFileName>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_iwdg.c</PathWithFileName>
       <FilenameWithoutPath>stm32l0xx_hal_iwdg.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -533,8 +494,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_lcd.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_lcd.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_lptim.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_lptim.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -545,8 +506,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_lptim.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_lptim.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_pwr.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_pwr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -557,8 +518,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_msp_template.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_msp_template.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_pwr_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_pwr_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -569,8 +530,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_pcd.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_pcd.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_rcc.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_rcc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -581,8 +542,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_pcd_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_pcd_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_rcc_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_rcc_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -593,8 +554,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_pwr.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_pwr.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_rng.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_rng.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -605,8 +566,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_pwr_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_pwr_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_rtc.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_rtc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -617,8 +578,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_rcc.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_rcc.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_rtc_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_rtc_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -629,8 +590,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_rcc_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_rcc_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_spi.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_spi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -641,8 +602,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_rng.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_rng.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_tim.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_tim.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -653,8 +614,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_rtc.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_rtc.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_tim_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_tim_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -665,8 +626,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_rtc_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_rtc_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_tsc.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_tsc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -677,8 +638,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_smartcard.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_smartcard.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_uart.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_uart.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -689,8 +650,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_smartcard_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_smartcard_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_uart_ex.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_uart_ex.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -701,8 +662,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_smbus.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_smbus.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_usart.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_usart.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -713,8 +674,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_spi.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_spi.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_hal_wwdg.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_hal_wwdg.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -725,8 +686,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_tim.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_tim.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l0xx_it.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l0xx_it.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -737,8 +698,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_tim_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_tim_ex.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\device\cpu\STM32L051\stm32l051.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l051.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -749,240 +710,88 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_tsc.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_tsc.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>39</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_uart.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_uart.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>40</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_uart_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_uart_ex.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>41</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_usart.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_usart.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>42</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_wwdg.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_wwdg.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>43</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\cmsis\system_stm32l0xx.c</PathWithFileName>
+      <PathWithFileName>..\program\device\cpu\STM32L051\system_stm32l0xx.c</PathWithFileName>
       <FilenameWithoutPath>system_stm32l0xx.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>44</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\bsp_rtc.c</PathWithFileName>
-      <FilenameWithoutPath>bsp_rtc.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>45</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\stm32l0xx_it.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_it.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>46</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_comp_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_comp_ex.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>47</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_firewall.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_firewall.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>48</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_flash.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_flash.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>49</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_flash_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_flash_ex.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>50</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_flash_ramfunc.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_flash_ramfunc.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>51</FileNumber>
-      <FileType>2</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\CMSIS\startup_stm32l051xx.s</PathWithFileName>
-      <FilenameWithoutPath>startup_stm32l051xx.s</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>52</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\cpu\stm32l0xx_hal_msp.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l0xx_hal_msp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
   </Group>
 
   <Group>
-    <GroupName>lora</GroupName>
+    <GroupName>com</GroupName>
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>53</FileNumber>
+      <FileNumber>39</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\com\lora\aes.c</PathWithFileName>
-      <FilenameWithoutPath>aes.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\com\serial\spi.c</PathWithFileName>
+      <FilenameWithoutPath>spi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>54</FileNumber>
+      <FileNumber>40</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\com\lora\LoRaMac.c</PathWithFileName>
+      <PathWithFileName>..\program\com\serial\uart.c</PathWithFileName>
+      <FilenameWithoutPath>uart.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>41</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\program\com\lora\LoRaMac.c</PathWithFileName>
       <FilenameWithoutPath>LoRaMac.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>55</FileNumber>
+      <FileNumber>42</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\com\lora\sx1276.c</PathWithFileName>
+      <PathWithFileName>..\program\com\lora\sx1276.c</PathWithFileName>
       <FilenameWithoutPath>sx1276.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
-  </Group>
-
-  <Group>
-    <GroupName>os</GroupName>
-    <tvExp>1</tvExp>
-    <tvExpOptDlg>0</tvExpOptDlg>
-    <cbSel>0</cbSel>
-    <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>56</FileNumber>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>43</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\os\os_timer.c</PathWithFileName>
-      <FilenameWithoutPath>os_timer.c</FilenameWithoutPath>
+      <PathWithFileName>..\program\com\aes.c</PathWithFileName>
+      <FilenameWithoutPath>aes.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>44</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\program\com\cmac.c</PathWithFileName>
+      <FilenameWithoutPath>cmac.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -995,50 +804,70 @@
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>4</GroupNumber>
-      <FileNumber>57</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>45</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\app\communication.c</PathWithFileName>
-      <FilenameWithoutPath>communication.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>4</GroupNumber>
-      <FileNumber>58</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\app\main.c</PathWithFileName>
+      <PathWithFileName>..\program\app\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>4</GroupNumber>
-      <FileNumber>59</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>46</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\app\rfid.c</PathWithFileName>
+      <PathWithFileName>..\program\app\rfid.c</PathWithFileName>
       <FilenameWithoutPath>rfid.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>4</GroupNumber>
-      <FileNumber>60</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>47</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\algorithm\data.c</PathWithFileName>
+      <PathWithFileName>..\program\app\communication.c</PathWithFileName>
+      <FilenameWithoutPath>communication.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>48</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\program\app\data.c</PathWithFileName>
       <FilenameWithoutPath>data.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+  </Group>
+
+  <Group>
+    <GroupName>os</GroupName>
+    <tvExp>0</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <RteFlg>0</RteFlg>
+    <File>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>49</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>1</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\program\os\os_timer.c</PathWithFileName>
+      <FilenameWithoutPath>os_timer.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
