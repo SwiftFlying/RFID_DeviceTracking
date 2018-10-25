@@ -376,6 +376,11 @@
           <GroupName>cpu</GroupName>
           <Files>
             <File>
+              <FileName>cpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\cpu\cpu.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32l0xx_hal.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\cpu\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal.c</FilePath>
@@ -594,11 +599,6 @@
               <FileName>stm32l0xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\cpu\stm32l0xx_it.c</FilePath>
-            </File>
-            <File>
-              <FileName>cpu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cpu\cpu.c</FilePath>
             </File>
             <File>
               <FileName>stm32l0xx_hal_comp_ex.c</FileName>

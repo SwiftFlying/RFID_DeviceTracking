@@ -99,8 +99,6 @@ TIM
 uint32_t uwPrescalerValue = 0;
 
 
-
-
 void Tim_Init(void) //100us ¶¨Ê±: 32MHz/3200=10000Hz
 {
 	TimHandle.Instance = TIM2;  /* Set TIMx instance */
@@ -129,19 +127,22 @@ void GPIO_Init(void)
 		GPIO_InitStructure.Pin = (GPIO_PIN_2);//PA2, sx1279 board use active crystal, and PA2 control it's power supply
 		GPIO_InitStructure.Pull = GPIO_PULLUP;
 		HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);		
-//EXTI	
-		GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING;
-		GPIO_InitStructure.Pull = GPIO_PULLDOWN;
-		GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
-		GPIO_InitStructure.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_10;//PB10-DIO0, PB2-DIO1, PB1-DIO2, PB0-DIO3
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);	
-		
-		GPIO_InitStructure.Pin = GPIO_PIN_5 ;//PB5,
-		HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);			
 }
 
 void EXTI_Init(void)
 {
+	GPIO_InitTypeDef   GPIO_InitStructure;	
+	__GPIOB_CLK_ENABLE();	
+
+	GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStructure.Pull = GPIO_PULLDOWN;
+	GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
+	GPIO_InitStructure.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_10;//PB10-DIO0, PB2-DIO1, PB1-DIO2, PB0-DIO3
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);	
+
+	GPIO_InitStructure.Pin = GPIO_PIN_5 ;//PB5,
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);		
+	
 	HAL_NVIC_SetPriority(EXTI0_1_IRQn, 1, 0);
 	HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
 	HAL_NVIC_SetPriority(EXTI2_3_IRQn, 1, 0);
